@@ -1,0 +1,136 @@
+﻿@model CrudOpration.Models.User
+<style>
+    .border-round {
+        border: 1px solid #ddd;
+        border-radius: 8px; 
+        padding: 20px; 
+        background-color: #fff; 
+    }
+</style>
+<form asp-action="Edit" method="post">
+    <div class="row justify-content-center">
+        <div class="col-md-6" style="background-color: rebeccapurple; color: white; padding: 10px; border-radius: 8px;">
+            <p style="margin: 0; text-align: center;">Update User Details</p>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 border-round">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Login User Id</label>
+                <div class="col-sm-6">
+                    <input asp-for="LoginUserId" class="form-control" />
+                    <span asp-validation-for="LoginUserId" class="text-danger"></span>
+                </div>
+            </div>  
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">User Name</label>
+                <div class="col-sm-6">
+                    <input asp-for="UserName" class="form-control" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Address</label>
+                <div class="col-sm-6">
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Contact Number</label>
+                <div class="col-sm-6">
+                    <input asp-for="ContactNumber" class="form-control" />
+                    <span asp-validation-for="ContactNumber" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Mobile Number</label>
+                <div class="col-sm-6">
+                    <input asp-for="MobileNumber" class="form-control" />
+                    <span asp-validation-for="MobileNumber" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Email Id</label>
+                <div class="col-sm-6">
+                    <input asp-for="EmailId" class="form-control" />
+                    <span asp-validation-for="EmailId" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label"></label>
+                <div class="col-sm-6">
+                    <div class="form-check">
+                        <input asp-for="OTPVerify" type="checkbox" class="form-check-input" />
+                        <label class="form-check-label">OTP Verify</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label"></label>
+                <div class="col-sm-6">
+                    <div class="form-check">
+                        <input asp-for="Tab" type="checkbox" class="form-check-input" />
+                        <label class="form-check-label">Tab</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">User Layer</label>
+                <div class="col-sm-6">
+                    <select asp-for="UserLayer" class="form-control">
+                        <option value="">Select a Layer</option>
+                        <option value="Waterbill Clerk">Waterbill Clerk</option>
+                        <option value="Stationarybill Clerk">Stationarybill Clerk</option>
+                    </select>
+                    <span asp-validation-for="UserLayer" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Remark</label>
+                <div class="col-sm-6">
+                    <input asp-for="Remark" class="form-control" />
+                    <span asp-validation-for="Remark" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label"></label>
+                <div class="col-sm-6">
+                    <div class="form-check">
+                        <input asp-for="IsActive" type="checkbox" class="form-check-input" value="true" />
+                        <label class="form-check-label">Active</label>
+                    </div>
+                </div>
+            </div>
+            @*  <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Active</label>
+            <div class="col-sm-5">
+            <input asp-for="IsActive" type="radio" value="true" />
+            <span asp-validation-for="IsActive" class="text-danger"></span>
+            </div>
+            </div> *@
+          
+
+            <div class="form-group row">
+                <div class="col-sm-12 offset-sm-4">
+                    <a asp-controller="Home" asp-action="displayAll" class="btn btn-secondary">Back</a>
+                    <input type="submit" value="Update" class="btn btn-success" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+
